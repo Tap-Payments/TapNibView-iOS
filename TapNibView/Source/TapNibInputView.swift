@@ -5,33 +5,15 @@
 //  Copyright © 2018 Tap Payments. All rights reserved.
 //
 
-import struct CoreGraphics.CGGeometry.CGRect
-import struct CoreGraphics.CGGeometry.CGSize
-import class Foundation.NSBundle.Bundle
-import class Foundation.NSCoder.NSCoder
-import class UIKit.UIInputView.UIInputView
-import enum UIKit.UIInputView.UIInputViewStyle
-import class UIKit.UIScreen.UIScreen
+import struct   CoreGraphics.CGGeometry.CGRect
+import struct   CoreGraphics.CGGeometry.CGSize
+import class    Foundation.NSBundle.Bundle
+import class    Foundation.NSCoder.NSCoder
+import class    UIKit.UIInputView.UIInputView
+import class    UIKit.UIScreen.UIScreen
 
 /// Same as Tap Nib View, but inherited from UIInputView
-open class TapNibInputView: UIInputView, TapNibLoading {
-
-    // MARK: - Open -
-    // MARK: Properties
-
-    open class var nibName: String {
-
-        return self.className
-    }
-
-    open class var bundle: Bundle {
-
-        return Bundle(for: self)
-    }
-
-    // MARK: Methods
-
-    open func setup() { }
+open class TapNibInputView: UIInputView {
 
     // MARK: - Public -
     // MARK: Properties
@@ -40,7 +22,7 @@ open class TapNibInputView: UIInputView, TapNibLoading {
 
     // MARK: Methods
 
-    public override init(frame: CGRect, inputViewStyle: UIInputViewStyle) {
+    public override init(frame: CGRect, inputViewStyle: UIInputView.Style) {
 
         super.init(frame: frame, inputViewStyle: inputViewStyle)
         self.loadContentView()
@@ -63,6 +45,20 @@ open class TapNibInputView: UIInputView, TapNibLoading {
 
         fileprivate static let defaultFrame = CGRect(origin: .zero,
                                                      size: CGSize(width: UIScreen.main.bounds.width, height: 64.0))
+    }
+}
+
+// MARK: - TapNibLoading
+extension TapNibInputView: TapNibLoading {
+
+    open class var nibName: String {
+
+        return self.className
+    }
+
+    open class var bundle: Bundle {
+
+        return Bundle(for: self)
     }
 }
 

@@ -5,32 +5,15 @@
 //  Copyright © 2018 Tap Payments. All rights reserved.
 //
 
-import struct CoreGraphics.CGGeometry.CGRect
-import struct CoreGraphics.CGGeometry.CGSize
-import class Foundation.NSBundle.Bundle
-import class Foundation.NSCoder.NSCoder
-import class UIKit.UIScreen.UIScreen
-import class UIKit.UIView.UIView
+import struct   CoreGraphics.CGGeometry.CGRect
+import struct   CoreGraphics.CGGeometry.CGSize
+import class    Foundation.NSBundle.Bundle
+import class    Foundation.NSCoder.NSCoder
+import class    UIKit.UIScreen.UIScreen
+import class    UIKit.UIView.UIView
 
 /// Base class for all the views that support loading from a nib file.
-open class TapNibView: UIView, TapNibLoading {
-
-    // MARK: - Open -
-    // MARK: Properties
-
-    open class var nibName: String {
-
-        return self.className
-    }
-
-    open class var bundle: Bundle {
-
-        return Bundle(for: self)
-    }
-
-    // MARK: Methods
-
-    open func setup() { }
+open class TapNibView: UIView {
 
     // MARK: - Public -
     // MARK: Properties
@@ -65,4 +48,19 @@ open class TapNibView: UIView, TapNibLoading {
     }
 }
 
+// MARK: - TapNibLoading
+extension TapNibView: TapNibLoading {
+
+    open class var nibName: String {
+
+        return self.className
+    }
+
+    open class var bundle: Bundle {
+
+        return Bundle(for: self)
+    }
+}
+
+// MARK: - TapNibContentViewLoader
 extension TapNibView: TapNibContentViewLoader {}

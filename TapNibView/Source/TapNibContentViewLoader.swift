@@ -6,8 +6,8 @@
 //
 
 import protocol TapAdditionsKit.ClassProtocol
-import class UIKit.UINib.UINib
-import class UIKit.UIView.UIView
+import class    UIKit.UINib.UINib
+import class    UIKit.UIView.UIView
 
 /// Content view loading helper protocol.
 internal protocol TapNibContentViewLoader: ClassProtocol, TapNibLoading {
