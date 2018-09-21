@@ -13,7 +13,24 @@ import class    UIKit.UIInputView.UIInputView
 import class    UIKit.UIScreen.UIScreen
 
 /// Same as Tap Nib View, but inherited from UIInputView
-open class TapNibInputView: UIInputView {
+open class TapNibInputView: UIInputView, TapNibLoading {
+
+    // MARK: - Open -
+    // MARK: Properties
+
+    open class var nibName: String {
+
+        return self.className
+    }
+
+    open class var bundle: Bundle {
+
+        return Bundle(for: self)
+    }
+
+    // MARK: Methods
+
+    open func setup() {}
 
     // MARK: - Public -
     // MARK: Properties
@@ -45,20 +62,6 @@ open class TapNibInputView: UIInputView {
 
         fileprivate static let defaultFrame = CGRect(origin: .zero,
                                                      size: CGSize(width: UIScreen.main.bounds.width, height: 64.0))
-    }
-}
-
-// MARK: - TapNibLoading
-extension TapNibInputView: TapNibLoading {
-
-    open class var nibName: String {
-
-        return self.className
-    }
-
-    open class var bundle: Bundle {
-
-        return Bundle(for: self)
     }
 }
 

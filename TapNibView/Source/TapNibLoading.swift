@@ -27,8 +27,3 @@ public protocol TapNibLoading where Self: UIView {
     /// Default implementation does nothing.
     func setup()
 }
-
-extension TapNibLoading {
-
-    public func setup() {}
-}

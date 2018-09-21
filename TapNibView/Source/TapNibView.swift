@@ -13,7 +13,24 @@ import class    UIKit.UIScreen.UIScreen
 import class    UIKit.UIView.UIView
 
 /// Base class for all the views that support loading from a nib file.
-open class TapNibView: UIView {
+open class TapNibView: UIView, TapNibLoading {
+
+    // MARK: - Open -
+    // MARK: Properties
+
+    open class var nibName: String {
+
+        return self.className
+    }
+
+    open class var bundle: Bundle {
+
+        return Bundle(for: self)
+    }
+
+    // MARK: Methods
+
+    open func setup() {}
 
     // MARK: - Public -
     // MARK: Properties
@@ -45,20 +62,6 @@ open class TapNibView: UIView {
 
         fileprivate static let defaultFrame = CGRect(origin: .zero,
                                                      size: CGSize(width: UIScreen.main.bounds.width, height: 64.0))
-    }
-}
-
-// MARK: - TapNibLoading
-extension TapNibView: TapNibLoading {
-
-    open class var nibName: String {
-
-        return self.className
-    }
-
-    open class var bundle: Bundle {
-
-        return Bundle(for: self)
     }
 }
 
