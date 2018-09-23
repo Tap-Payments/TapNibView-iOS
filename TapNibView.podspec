@@ -1,4 +1,4 @@
-TapAdditionsKitDependencyVersion = '1.1' unless defined? TapAdditionsKitDependencyVersion
+TapAdditionsKitDependencyVersion = '>= 1.1' unless defined? TapAdditionsKitDependencyVersion
 
 Pod::Spec.new do |tapNibView|
     
@@ -8,7 +8,7 @@ Pod::Spec.new do |tapNibView|
     tapNibView.name                     = 'TapNibView'
     tapNibView.summary                  = 'Base View That is loading from the nib.'
     tapNibView.requires_arc             = true
-    tapNibView.version                  = '1.0.1.1'
+    tapNibView.version                  = '1.0.1.2'
     tapNibView.license                  = { :type => 'MIT', :file => 'LICENSE' }
     tapNibView.author                   = { 'Tap Payments' => 'hello@tap.company' }
     tapNibView.homepage                 = 'https://github.com/Tap-Payments/TapNibView-iOS'
