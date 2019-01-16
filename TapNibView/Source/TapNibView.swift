@@ -2,7 +2,7 @@
 //  TapNibView.swift
 //  TapNibView
 //
-//  Copyright © 2018 Tap Payments. All rights reserved.
+//  Copyright © 2019 Tap Payments. All rights reserved.
 //
 
 import struct   CoreGraphics.CGGeometry.CGRect
@@ -20,7 +20,7 @@ open class TapNibView: UIView, TapNibLoading {
 
     open class var nibName: String {
 
-        return self.className
+        return self.tap_className
     }
 
     open class var bundle: Bundle {

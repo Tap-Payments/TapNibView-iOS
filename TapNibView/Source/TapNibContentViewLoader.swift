@@ -2,7 +2,7 @@
 //  TapNibContentViewLoader.swift
 //  TapNibView
 //
-//  Copyright © 2018 Tap Payments. All rights reserved.
+//  Copyright © 2019 Tap Payments. All rights reserved.
 //
 
 import protocol TapAdditionsKit.ClassProtocol
@@ -28,14 +28,14 @@ internal extension TapNibContentViewLoader {
 
         guard let contentView = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
 
-            fatalError("Failed to instantiate \(selfType.className) from nib named \(selfType.nibName).")
+            fatalError("Failed to instantiate \(selfType.tap_className) from nib named \(selfType.nibName).")
         }
 
         self.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
 
-        self.addSubviewWithConstraints(contentView, respectLanguageDirection: true)
-        contentView.setTranslatesAutoresizingMasksIntoConstrants(false, includeSubviews: true)
+        self.tap_addSubviewWithConstraints(contentView, respectLanguageDirection: true)
+        contentView.tap_setTranslatesAutoresizingMasksIntoConstrants(false, includeSubviews: true)
 
         self.isContentViewLoaded = true
 
