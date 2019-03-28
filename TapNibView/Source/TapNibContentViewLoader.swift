@@ -20,7 +20,7 @@ internal extension TapNibContentViewLoader {
     // MARK: - Internal -
     // MARK: Methods
 
-    internal func loadContentView() {
+    func loadContentView() {
 
         guard !self.isContentViewLoaded else { return }
         let selfType = type(of: self)
